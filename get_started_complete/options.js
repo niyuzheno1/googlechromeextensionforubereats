@@ -17,5 +17,13 @@ function constructOptions(kButtonColors) {
     });
     page.appendChild(button);
   }
+  chrome.notifications.create(
+    'name-for-notification',{   
+    type: 'basic', 
+    iconUrl: 'default.png', 
+    title: "Hi there! Your order is ready!", 
+    message: "Please meet the driver at the designated place." 
+    },
+    function() {console.log('created!');} );
 }
 constructOptions(kButtonColors);
